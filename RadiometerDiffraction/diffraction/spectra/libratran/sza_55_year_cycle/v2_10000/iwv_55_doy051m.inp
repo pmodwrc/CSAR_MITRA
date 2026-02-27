@@ -1,0 +1,17 @@
+output_user lambda  edir 
+solar_file /corona/klima/uvc/atmosphere/libradtran/data/solar_flux/kurudz_1.0nm.dat
+wavelength 290.0 10000 
+data_files_path /corona/klima/uvc/atmosphere/libradtran/data 
+atmosphere_file /corona/klima/uvc/atmosphere/libradtran/data/atmmod/afglms.dat 
+altitude 1.59
+latitude 46.800000  
+longitude 9.830000 
+day_of_year 51 
+sza 55
+correlated_k LOWTRAN
+rte_solver twostr
+ozone_column 300
+aerosol_default
+aerosol_season 2
+aerosol_angstrom 1.4 0.008
+dens_column H2O 800000 DU
