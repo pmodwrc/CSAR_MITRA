@@ -189,7 +189,17 @@ class DiffractionDara(GenericRadiometer):
         self.geometry.distanceBetweenApertures_in_mm = 54.1
         self.geometry.radiusDefiningAperture_in_mm = 6.9 / 2
         self.geometry.inverted = False
+        self.__window_transmission_function_wavelength_in_nm = numpy.arange(1, 10001, 1, dtype=float)
+        self.__window_transmission_function_relative_transmission = numpy.ones(10000)
         super().__init__(self.geometry)
+
+    def get_simple_window_transmission_function(self):
+        return WindowTransmission(self.__window_transmission_function_wavelength_in_nm,
+                                      self.__window_transmission_function_relative_transmission)
+
+    def get_advanced_window_transmission_function(self):
+        return self.get_simple_window_transmission_function()
+
 
 
 class DiffractionPMO6(GenericRadiometer):
